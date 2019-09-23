@@ -8,10 +8,14 @@
    redis 相应的数据类型 set(uid, ['ip' => '', 'port' => '', 'fd' => '']);
 4. 如聊天室中私聊，知道用户uid，从reids 获取对应的gateway服务器及fd，转发到该服务器由它转发给对应的用户，房间群里也如此； 推送给全部用户，只需每个gateway服务器遍历发送即可
 5. 代码没有实现这一块的推送
+6. redis组件是 easySwoole/redis-pool
     
 ```
 ## 安装方式
-
+```
+git clone https://github.com/cym000/swoole-gateway-register-business.git
+composer update
+```
 ## 部署方式
 ```
 1. 启动顺序Register、BusinessWorker、Gateway
