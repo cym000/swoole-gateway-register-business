@@ -1,0 +1,50 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>测试webSocket js</title>
+
+    <script type="text/javascript">
+        function WebSocketTest()
+        {
+            if ("WebSocket" in window)
+            {
+                // 打开一个 web socket
+                var ws = new WebSocket("ws://127.0.0.1:9502?uid=1");
+                ws.onopen = function()
+                {
+                    console.log('ws.onopen');
+                    // Web Socket 已连接上，使用 send() 方法发送数据
+//                    ws.send("发送数据");
+                };
+
+                ws.onmessage = function (evt)
+                {
+                    console.log('ws.onmessage');
+                    var received_msg = evt.data;
+                };
+
+                ws.onclose = function()
+                {
+                    console.log('ws.onclose');
+                    // 关闭 websocket
+                };
+            }
+
+            else
+            {
+                // 浏览器不支持 WebSocket
+                alert("您的浏览器不支持 WebSocket!");
+            }
+        }
+    </script>
+
+</head>
+<body>
+
+<div id="sse">
+    <a href="javascript:WebSocketTest()">运行 WebSocket</a>
+</div>
+
+</body>
+</html>
