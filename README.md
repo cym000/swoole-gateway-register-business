@@ -1,4 +1,10 @@
 # Swoole-Gateway 分布式编程及部署，仅用于 webSocket、TCP 长连接实时项目 
+## 本实例是 register\gateway\businessworker 其实也可以只需 多个gateway即可
+```
+多个gateway实现方法：
+1. 只需多个gateway之间可通过http、rpc通信
+2. 告知gateway对应如何去推送即可
+```
 
 ## 只是提供分布式 部署基本思路
 ```
